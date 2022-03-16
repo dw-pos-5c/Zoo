@@ -1,0 +1,12 @@
+D:\temp\Zoo\ZooLib\bin\Debug\net6.0\ZooLib.deps.json
+D:\temp\Zoo\ZooLib\bin\Debug\net6.0\ZooLib.dll
+D:\temp\Zoo\ZooLib\bin\Debug\net6.0\ZooLib.pdb
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.csproj.AssemblyReference.cache
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.AssemblyInfoInputs.cache
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.AssemblyInfo.cs
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.csproj.CoreCompileInputs.cache
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.dll
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\refint\ZooLib.dll
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ZooLib.pdb
+D:\temp\Zoo\ZooLib\obj\Debug\net6.0\ref\ZooLib.dll

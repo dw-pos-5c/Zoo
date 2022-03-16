@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "ZooLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ZooLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ZooLib.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ZooLib/1.0.0": {
+      "type": "project",
+      "path": "../ZooLib/ZooLib.csproj",
+      "msbuildProject": "../ZooLib/ZooLib.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "ZooLib >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\danie\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\temp\\Zoo\\ZooLib\\ZooLib.csproj": {
+              "projectPath": "D:\\temp\\Zoo\\ZooLib\\ZooLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
