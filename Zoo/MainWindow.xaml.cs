@@ -41,41 +41,55 @@ namespace Zoo
             });
         }
 
+        private Dictionary<string, int> animalDic = new Dictionary<string, int>();
+
         private void btnClick_Buy(object sender, RoutedEventArgs e)
         {
             var cbItem = cbAnimals.SelectedItem as ComboBoxItem;
             var name = cbItem.Content as string;
             var isParsed = int.TryParse(tbNumber.Text, out int count);
             if (name == null || !isParsed) return;
-            var animal = factory.Create(name, count);
+            var animals = factory.Create(name, count);
 
-            lbStock.Items.Add(animal);
+            var exists = animalDic.ContainsKey(name);
+            if (exists) animalDic[name] += animals.Count;
+            else animalDic[name] = animals.Count;
+
+            UpdateInfo();
         }
-
-        private void CbAnimals_OnSelectionChanged(object sender, SelectionChangedEventArgs e) => UpdateInfo();
-        private void TbNumber_OnKeyUp(object sender, KeyEventArgs e) => UpdateInfo();
 
         private void UpdateInfo()
         {
-            var cbItem = cbAnimals.SelectedItem as ComboBoxItem;
-            var name = cbItem.Content as string;
-            var isParsed = int.TryParse(tbNumber.Text, out int count);
-            if (name == null || !isParsed) return;
-            var animal = factory.GetInfo(name);
-            if (animal.CarnivorialFood > 0)
+            lbStock.Items.Clear();
+
+            double carnivorialFood = 0;
+            double herbivorialFood = 0;
+            double totalPrice = 0;
+
+            foreach (var key in animalDic.Keys)
             {
-                lblFood.Content = $"Needs {animal.CarnivorialFood}kgs CarnivorialFood/day";
+                var animal = factory.GetInfo(key);
+                var count = animalDic[key];
+                carnivorialFood += animal.CarnivorialFood * count;
+                herbivorialFood += animal.HerbivorialFood * count;
+                totalPrice += animal.Price * count;
+
+                lbStock.Items.Add(new ListBoxItem
+                {
+                    Content = $"{count} x {key}",
+                });
             }
-            else if (animal.HerbivorialFood > 0)
+
+            if (carnivorialFood > 0)
             {
-                lblFood.Content = $"Needs {animal.HerbivorialFood}kgs HerbivorialFood/day";
+                lblFoodCarn.Content = $"Needs { Math.Round(carnivorialFood, 2) }kgs CarnivorialFood/day";
             }
-            else
+            if (herbivorialFood > 0)
             {
-                lblFood.Content = $"Needs {animal.CarnivorialFood}kgs CarnivorialFood/day\nand {animal.HerbivorialFood}kgs HerbivorialFood/day";
+                lblFoodHerb.Content = $"Needs { Math.Round(herbivorialFood, 2) }kgs HerbivorialFood/day";
             }
             
-            lblPrice.Content = $"Price: { Math.Round(animal.Price * count, 2) }€";
+            lblPrice.Content = $"Price: { Math.Round(totalPrice, 2) }€";
         }
     }
 }

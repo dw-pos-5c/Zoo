@@ -15,15 +15,15 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <Label>Verfügbare Spezies:</Label>
-            <ComboBox SelectionChanged="CbAnimals_OnSelectionChanged" Name="cbAnimals" MinWidth="200"></ComboBox>
-            <TextBox KeyUp="TbNumber_OnKeyUp" Name="tbNumber" Width="60" Margin="5"></TextBox>
+            <ComboBox Name="cbAnimals" MinWidth="200"></ComboBox>
+            <TextBox Name="tbNumber" Width="60" Margin="5"></TextBox>
             <Button Click="btnClick_Buy" Width="50">Buy</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Margin="0,0,0,86">
             <Label Background="LightGray">Zoo Schönbrunn</Label>
-            <Label Name="lblFood" Margin="10">Food</Label>
+            <Label Name="lblFoodHerb" Margin="10">Carnivorial Food</Label>
+            <Label Name="lblFoodCarn" Margin="10">Herbivorial Food</Label>
             <Label Name="lblPrice" Margin="10">Price</Label>
-            <Label Name="lblError"></Label>
         </StackPanel>
         <StackPanel Grid.Row="1" Margin="0,291,0,0" Grid.RowSpan="2">
             <Label Background="LightBlue">Stock</Label>

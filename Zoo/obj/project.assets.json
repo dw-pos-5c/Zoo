@@ -27,7 +27,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danie\\.nuget\\packages\\": {}
+    "C:\\Users\\Daniel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -35,11 +36,15 @@
       "projectUniqueName": "D:\\temp\\Zoo\\Zoo\\Zoo.csproj",
       "projectName": "Zoo",
       "projectPath": "D:\\temp\\Zoo\\Zoo\\Zoo.csproj",
-      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
       "outputPath": "D:\\temp\\Zoo\\Zoo\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
